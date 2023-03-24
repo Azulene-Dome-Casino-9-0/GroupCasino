@@ -14,32 +14,31 @@ import java.util.Scanner;
  */
 public class CasinoAccountManager{
 
-    public List<CasinoAccount> account;
-    private Double balance;
+    public List<CasinoAccount> accounts;
+    private static final double DEFAULT_BALANCE = 100000.0;
 
     public CasinoAccountManager() {
-        this.account = new ArrayList<>();
+        this.accounts = new ArrayList<>();
     }
 
+
     public CasinoAccount getAccount(String accountName, String accountPassword) {
-        for (CasinoAccount a : account) {
+        for (CasinoAccount a : accounts) {
             if (accountName.equals(a.getAccountName()) && accountPassword.equals(a.getPassword())) {
                 return a;
             }
-            else {
-                return null;
-            }
         }
+
         return null;
     }
 
-    public List<CasinoAccount> registerAccount(CasinoAccount a) {
-        account.add(a);
-        return account;
+    private List<CasinoAccount> registerAccount(CasinoAccount a) {
+        accounts.add(a);
+        return accounts;
     }
 
     public CasinoAccount createAccount(String accountName, String accountPassword) {
-        CasinoAccount acc = new CasinoAccount(accountName, accountPassword, balance);
+        CasinoAccount acc = new CasinoAccount(accountName, accountPassword, DEFAULT_BALANCE);
         registerAccount(acc);
         return acc;
     }
