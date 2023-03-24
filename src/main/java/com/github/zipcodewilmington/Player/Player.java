@@ -1,4 +1,7 @@
 package com.github.zipcodewilmington.Player;
+
+
+import com.github.zipcodewilmington.Casino;
 import com.github.zipcodewilmington.casino.CasinoAccount;
 
 public abstract class Player{

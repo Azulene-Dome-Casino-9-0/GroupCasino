@@ -18,8 +18,8 @@ public class CoinFlipGame extends Games implements GambleGames {
         return 1;
     }
 
-    public CoinFlipGame(List<Player> players) {
-        super(players);
+    public CoinFlipGame(List<CasinoAccount> accounts) {
+        super(accounts);
 
         for (CasinoAccount acc : accounts) {
             CoinFlipPlayer pl = new CoinFlipPlayer(acc);
