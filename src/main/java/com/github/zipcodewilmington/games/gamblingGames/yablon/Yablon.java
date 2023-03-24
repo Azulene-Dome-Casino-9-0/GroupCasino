@@ -10,7 +10,7 @@ import com.github.zipcodewilmington.games.gamblingGames.GambleGames;
 import java.util.List;
 import java.util.Scanner;
 public class Yablon extends Games implements GambleGames {
-    private Deck deck;
+    public Deck deck;
     private Double totalProfits;
     private Double totalLosses;
     private Double multiplier;
@@ -20,14 +20,11 @@ public class Yablon extends Games implements GambleGames {
         super(players);
     }
 
-
-    public void main(String[] args) {
-        yablonGame();
-        play();
-    }
-
     public void yablonGame() {
         this.deck = new Deck();
+    }
+    public boolean playGame(String input){
+        return true;
     }
 
     public void play() {
