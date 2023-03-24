@@ -1,6 +1,6 @@
 package com.github.zipcodewilmington.Player;
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 import com.github.zipcodewilmington.casino.CasinoAccount;
 
 public abstract class Player{

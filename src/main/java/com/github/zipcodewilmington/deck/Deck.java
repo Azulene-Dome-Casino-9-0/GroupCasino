@@ -19,4 +19,12 @@ public class Deck {
     public int size(){
         return cards.size();
     }
+
+    public static Card drawCard() {
+        return Deck.drawCard();
+    }
+
+    public static void shuffle(){
+        Deck.shuffle();
+    }
 }
