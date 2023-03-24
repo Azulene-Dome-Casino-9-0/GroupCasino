@@ -11,8 +11,8 @@ import java.util.Scanner;
 
 public class CoinFlipGame extends Games implements GambleGames {
 
-        private double balance;
-        private Scanner scanner;
+
+        Scanner scanner;
         private Random random;
     public int getMaxPlayers() {
         return 1;
@@ -25,15 +25,16 @@ public class CoinFlipGame extends Games implements GambleGames {
             CoinFlipPlayer pl = new CoinFlipPlayer(acc);
             addPlayer(pl);
         }
-        balance = 0.0;
         scanner = new Scanner(System.in);
         random = new Random();
     }
 
     public void startGame () {
+        double balance = players.get(0).getBalance();
             System.out.println("Welcome to the Coin Flip Game!");
             System.out.println("You will be prompted to bet on the outcome of a coin toss.");
             boolean playAgain = true;
+
 
             while (playAgain) {
 
@@ -59,6 +60,7 @@ public class CoinFlipGame extends Games implements GambleGames {
         }
 
         public Double bet () {
+            double balance = players.get(0).getBalance();
             System.out.printf("Your current balance is $%.2f.\n", balance);
             System.out.print("How much money do you want to bet? $");
             double wager = scanner.nextDouble();
@@ -100,6 +102,7 @@ public class CoinFlipGame extends Games implements GambleGames {
         }
 
         public double payOut ( double wager, double multiplier){
+            double balance = players.get(0).getBalance();
             double payout = wager * multiplier;
             balance += payout;
             return payout;
@@ -120,11 +123,13 @@ public class CoinFlipGame extends Games implements GambleGames {
         }
 
         public Double totalProfit () {
+            double balance = players.get(0).getBalance();
             return Math.max(balance, 0.0);
         }
 
         public Double totalLosses () {
-            return balance < 0.0 ? -balance : 0.0;
+            double balance = players.get(0).getBalance();
+        return balance < 0.0 ? -balance : 0.0;
         }
 
         public Double multiplier () {

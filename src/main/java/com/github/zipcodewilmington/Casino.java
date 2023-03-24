@@ -6,6 +6,7 @@ import com.github.zipcodewilmington.casino.CasinoAccountManager;
 import com.github.zipcodewilmington.casino.GameInterface;
 import com.github.zipcodewilmington.casino.PlayerInterface;
 import com.github.zipcodewilmington.games.Games;
+import com.github.zipcodewilmington.games.gamblingGames.CoinFlip.CoinFlipGame;
 import com.github.zipcodewilmington.games.noGamblingAllowed.numberGuessGame.NumberGuessGame;
 import com.github.zipcodewilmington.games.noGamblingAllowed.numberGuessGame.NumberGuessPlayer;
 import com.github.zipcodewilmington.games.gamblingGames.slots.SlotsGame;
@@ -55,6 +56,16 @@ public class Casino implements Runnable {
                     // run the game
                     game.run();
 
+                } else if (gameSelectionInput.equals("COINFLIP")) {
+
+                    List<CasinoAccount> accs = askForAccounts(casinoAccountManager, 1);
+
+                    // now we hand them over to a game.. SLOTS GAME
+                    CoinFlipGame game = new CoinFlipGame(accs);
+
+                    // run the game
+                    game.startGame();
+
 
                 } else {
                     // TODO - implement better exception handling
@@ -82,7 +93,7 @@ public class Casino implements Runnable {
         return console.getStringInput(new StringBuilder()
                 .append("Welcome to the Game Selection Dashboard!")
                 .append("\nFrom here, you can select any of the following options:")
-                .append("\n\t[ SLOTS ], [ NUMBERGUESS ]")
+                .append("\n\t[ SLOTS ], [ NUMBERGUESS ], [ COINFLIP]")
                 .toString());
     }
 
