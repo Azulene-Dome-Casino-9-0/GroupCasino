@@ -1,11 +1,10 @@
 package com.github.zipcodewilmington.Player;
 
+import com.github.zipcodewilmington.Casino;
 import com.github.zipcodewilmington.casino.CasinoAccount;
-import com.github.zipcodewilmington.deck.Card;
-import com.github.zipcodewilmington.deck.Deck;
 
-public abstract class Player  {
-    //    String firstName;
+public abstract class Player{
+//    String firstName;
 //    String lastName;
     CasinoAccount account;
     Double balance;
@@ -31,6 +30,7 @@ public abstract class Player  {
     public CasinoAccount getCAccount() {
         return this.account;
     }
+
 
 
 }

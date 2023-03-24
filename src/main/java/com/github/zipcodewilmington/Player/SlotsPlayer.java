@@ -1,4 +1,9 @@
 package com.github.zipcodewilmington.Player;
 
-public class SlotsPlayer {
+import com.github.zipcodewilmington.casino.CasinoAccount;
+
+public class SlotsPlayer extends Player{
+    public SlotsPlayer(CasinoAccount account) {
+        super(account);
+    }
 }

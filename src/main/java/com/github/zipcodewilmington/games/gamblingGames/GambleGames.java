@@ -1,20 +1,14 @@
 package com.github.zipcodewilmington.games.gamblingGames;
 
-public class GambleGames {
+public interface GambleGames {
 
-    private double bet(){
-        return 0.0;
-    }
+    public Double bet();
 
-    private boolean payout(){
-        return false;
-    }
+    public boolean payOut();
 
-    private double totalProfit(){
-        return 0.0;
-    }
+    public Double totalProfit();
 
-    private double totalLosses(){
-        return 0.0;
-    }
+    public Double totalLosses();
+
+    public Double multiplier();
 }
