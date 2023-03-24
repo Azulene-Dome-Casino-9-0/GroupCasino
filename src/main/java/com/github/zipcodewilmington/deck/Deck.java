@@ -1,6 +1,7 @@
 package com.github.zipcodewilmington.deck;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Deck {
 
@@ -15,6 +16,12 @@ public class Deck {
                 cards.add(new Card(rank, suit));
             }
         }
+    }
+    public Card getRandomCard(){
+        Random random = new Random();
+        int randomCard = random.nextInt(cards.size());
+        Card card = cards.get(randomCard);
+        return card;
     }
     public int size(){
         return cards.size();
