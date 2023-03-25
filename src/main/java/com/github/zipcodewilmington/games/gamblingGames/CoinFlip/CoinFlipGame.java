@@ -1,4 +1,5 @@
 package com.github.zipcodewilmington.games.gamblingGames.CoinFlip;
+
 import com.github.zipcodewilmington.Player.Player;
 import com.github.zipcodewilmington.casino.CasinoAccount;
 import com.github.zipcodewilmington.games.Games;
@@ -14,6 +15,7 @@ public class CoinFlipGame extends Games implements GambleGames {
         private double balance;
         private Scanner scanner;
         private Random random;
+
     public int getMaxPlayers() {
         return 1;
     }
@@ -25,12 +27,11 @@ public class CoinFlipGame extends Games implements GambleGames {
             CoinFlipPlayer pl = new CoinFlipPlayer(acc);
             addPlayer(pl);
         }
-        balance = 0.0;
         scanner = new Scanner(System.in);
         random = new Random();
     }
 
-    public void startGame () {
+    public void run() {
             System.out.println("Welcome to the Coin Flip Game!");
             System.out.println("You will be prompted to bet on the outcome of a coin toss.");
             boolean playAgain = true;
