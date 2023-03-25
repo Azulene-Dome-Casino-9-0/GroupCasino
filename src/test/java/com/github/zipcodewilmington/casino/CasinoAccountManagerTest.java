@@ -18,4 +18,13 @@ public class CasinoAccountManagerTest {
         Assert.assertEquals(expectedPW, a.getAccount("Henlo", "password").getPassword());
 
     }
+
+    @Test
+    public void testGetAccount() {
+        CasinoAccountManager a = new CasinoAccountManager();
+        a.createAccount("accountName", "password");
+        String expected = "accountName";
+        Assert.assertEquals(expected, a.getAccount("accountName", "password").getAccountName());
+    }
+
 }

@@ -9,19 +9,29 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class YablonTest {
+public class YablonTest {
+    //BeforeAll
+    Yablon game = new Yablon(null);
 
-//    @Test
-//    public void IsCard3InBounds(){
-//        //given
-//        Card card1 = new Card(Rank.ACE, Suit.CLUBS);
-//        Card card2 = new Card(Rank.TEN, Suit.SPADES);
-//        Card card3 = new Card(Rank.FIVE, Suit.HEARTS);
-//        Yablon game = new Yablon(null);
-//        game.deck = new Deck();
-//        //when
-//        boolean result = game.playGame("y");
-//        //then
-//        Assert.assertTrue(card1.getRankValue() < card3.getRankValue() && card2.getRankValue() > card3.getRankValue());
-//    }
+
+    @Test
+    public void testCreateDeck(){
+        //given
+        int expected = 52;
+        //when
+        Deck actual = game.createDeck();;
+        //then
+        assertEquals(expected, actual.size());
+    }
+
+    @Test
+    public void testGetRandomCard(){
+        //Given
+        Deck deck = game.createDeck();;
+        //When
+        Card card1 = deck.getRandomCard();
+        //Then
+        assertTrue(deck.getCards().contains(card1));
+    }
+    // Todo: More tests
 }

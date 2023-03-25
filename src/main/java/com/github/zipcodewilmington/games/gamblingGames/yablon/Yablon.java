@@ -1,6 +1,7 @@
 package com.github.zipcodewilmington.games.gamblingGames.yablon;
 
 import com.github.zipcodewilmington.Player.Player;
+import com.github.zipcodewilmington.casino.CasinoAccount;
 import com.github.zipcodewilmington.deck.Card;
 import com.github.zipcodewilmington.deck.Deck;
 import com.github.zipcodewilmington.games.Games;
@@ -16,7 +17,7 @@ public class Yablon extends Games implements GambleGames {
     private Double multiplier;
     private Double betAmount;
 
-    public Yablon(List<Player> players) {
+    public Yablon(List<CasinoAccount> players) {
         super(players);
     }
 

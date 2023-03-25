@@ -17,21 +17,32 @@ public class Deck {
             }
         }
     }
+    public int size(){
+        return cards.size();
+    }
+
+    public static Card drawCard() {
+        return Deck.drawCard();
+    }
+
+    public static void shuffle(){
+        Deck.shuffle();
+    }
     public Card getRandomCard(){
         Random random = new Random();
         int randomCard = random.nextInt(cards.size());
         Card card = cards.get(randomCard);
         return card;
     }
-    public int size(){
-        return cards.size();
-    }
+
 
     public List<Card> getCards() {
         return cards;
     }
 
+
     public void setCards(List<Card> cards) {
         this.cards = cards;
     }
+
 }

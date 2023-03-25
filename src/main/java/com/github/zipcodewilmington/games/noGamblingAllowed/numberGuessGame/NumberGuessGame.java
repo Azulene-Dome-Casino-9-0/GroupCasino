@@ -1,15 +1,35 @@
 package com.github.zipcodewilmington.games.noGamblingAllowed.numberGuessGame;
 
+import com.github.zipcodewilmington.Player.NumberGuessingPlayer;
+import com.github.zipcodewilmington.casino.CasinoAccount;
+import com.github.zipcodewilmington.games.Games;
 import com.github.zipcodewilmington.utils.AnsiColor;
-
+import java.util.List;
 import java.util.Scanner;
+
 
 /**
  * Created by leon on 7/21/2020.
  */
-public class NumberGuessGame {
+public class NumberGuessGame extends Games {
 
-    public static void main(String[] args) {
+    public NumberGuessGame(List<CasinoAccount> accounts) {
+        super(accounts);
+
+        for(CasinoAccount someAccount: accounts){
+            NumberGuessPlayer thePlayer = new NumberGuessPlayer(someAccount);
+            addPlayer(thePlayer);
+
+        }
+
+
+    }
+
+    public int getMaxPlayers(){
+        return 1;
+
+    }
+public void run() {
 
         int actual = (int) (Math.random() * 50) + 1;  //randomly select number between 1 and 50 (both inclusive)
         //String[] rainbowText = new String[]{"RED","GREEN","YELLOW","BLUE","PURPLE","CYAN"};
@@ -33,3 +53,4 @@ public class NumberGuessGame {
         }
     }
 }
+
