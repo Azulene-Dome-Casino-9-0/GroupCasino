@@ -20,13 +20,15 @@ public class Yablon extends Games implements GambleGames {
         super(players);
     }
 
-    public void yablonGame() {
+    public Deck createDeck() {
         this.deck = new Deck();
+        return this.deck;
     }
     public boolean playGame(String input){
         return true;
     }
-
+    // Todo: MAKE METHODS THAT MAKE SENSE FOR GAME DUDE
+    // Todo: AVOID VOID
     public void play() {
         Card card1;
         Card card2;
@@ -49,7 +51,8 @@ public class Yablon extends Games implements GambleGames {
         if (answer.equals("y")) { // Todo: if statement for n and if statement for wrong input.
             Card card3 = this.deck.getRandomCard();
             System.out.println("Third Card" + card3.getRank() + " of" + card3.getSuit());
-            if (card3.getRankValue() > card1.getRankValue() && card3.getRankValue() < card2.getRankValue()) {
+            if (card3.getRankValue() > card1.getRankValue() && card3.getRankValue() < card2.getRankValue()
+                || card3.getRankValue() < card1.getRankValue() && card3.getRankValue() > card2.getRankValue()) {
                 System.out.println("You Win");
                 payOut();
             } else if (card3.getRankValue() == card1.getRankValue() && card3.getRankValue() == card2.getRankValue()) {
